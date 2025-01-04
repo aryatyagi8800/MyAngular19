@@ -1,1 +1,45 @@
-<p>data-binding works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Interpolation</h1>
+            <p>First Name -- {{firstName}}</p>
+            <p>Roll No. -- {{RollNo}}</p>
+        </div>
+        <div class="col-md-6">
+            <h1>Property Binding</h1>
+            <input type="text" name="firstName" [value]="firstName" [placeholder]="myPlaceHolder">
+            <div [class]="bgClass" style="height: 100px; width: 100px;">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Event Binding</h1>
+            <button class="btn btn-success" (click)="showWelcomeMessage()">Click</button>
+            <select class="form-select  mt-2 w-25" (change)="onCityChange()">
+                <option value="Nagpur">Nagpur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <h1>NgModel</h1>
+            <input type="text" [(ngModel)]="firstName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Ng Model</h1>
+            <button class="btn btn-success" (click)="showWelcomeMessage()">Click</button>
+            <select class="form-select  mt-2 w-25" [(ngModel)]="selectedCity">
+                <option value="Nagpur">Nagpur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+            </select>
+            <span>{{selectedCity}}</span>
+        </div>
+    </div>
+</div>
