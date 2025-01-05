@@ -1,0 +1,80 @@
+<div class="mt-3 p-4 bg-secondary text-white rounded">
+    <h1>Template-Form</h1>
+    <p>Using ngModel</p>
+</div>
+<div class="container">
+    <form class="row mt-4 p-4 g-3 needs-validation bg-secondary rounded" #form="ngForm" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name <span class="text-danger">*</span> </label>
+          <input type="text" #fName="ngModel" [(ngModel)]="studentObj.firstName" name="firstName" placeholder="first name.." class="form-control" id="validationCustom01" [value]="studentObj.firstName" required minlength="4">
+         @if (fName.errors?.['required']&&fName.touched && fName.dirty) {
+            <span class="text-danger">*this is required</span>
+         }
+         @else if (fName.errors?.['minlength']&&fName.touched && fName.dirty) {
+            <span class="text-danger">*min 3 char required</span>
+         }
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name <span class="text-danger">*</span> </label>
+          <input type="text" #lName="ngModel" [(ngModel)]="studentObj.lastName" name="lastName" class="form-control" id="validationCustom02" value="Otto" minlength="4" required>
+          @if (lName.errors?.['required']&&lName.touched && lName.dirty) {
+            <span class="text-danger">*this is required</span>
+         }
+          @else if (lName.errors?.['minlength']&&lName.touched&& fName.dirty) {
+            <span class="text-danger">Min 4 char required</span>
+         }
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+            <input type="text" [(ngModel)]="studentObj.userName" name="userName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend">
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" [(ngModel)]="studentObj.city" name="city" class="form-control" id="validationCustom03">
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" [(ngModel)]="studentObj.state" name="state" id="validationCustom04">
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" [(ngModel)]="studentObj.zipCode" name="zipCode" class="form-control" id="validationCustom05">
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="studentObj.isAcceptTerms" name="isAcceptTerms" type="checkbox" value="" id="invalidCheck">
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-danger" type="reset">Reset form</button>
+          <button class="btn btn-primary ms-2" [disabled]="form.invalid" type="submit" (click)="onSubmit()">Submit form</button>
+        </div>
+      </form>
+</div>
+<!-- <div>
+    {{formValue|json}}
+</div> -->

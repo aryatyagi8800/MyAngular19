@@ -1,0 +1,13 @@
+<div class="mt-3 p-4 bg-secondary text-white rounded">
+    <h1>Signal</h1>
+</div>
+<div class="row">
+    <div class="col-6">
+        <p>{{firstName()}}</p>
+        <input type="text" [value]="lastName()">
+        <p>{{courseName}}</p>
+        <button class="btn btn-success" (click)="decrement()">Decrement</button>
+        <p>{{rollNo()}}</p>
+        <button class="btn btn-success" (click)="increment()">Increment</button>
+    </div>
+</div>

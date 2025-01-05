@@ -1,0 +1,87 @@
+<div class="mt-3 p-4 bg-secondary text-white rounded">
+    <h1>Control Flow</h1>
+    <p><span>&#64;</span>if....,<span>&#64;</span>elseif...,<span>&#64;</span>else...</p>
+</div>
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-3">
+            @if(div1Visiable==true){
+                <div class="bg-danger p-3 text-center">
+                    <h4>Div-1</h4>
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            @if(div2Visiable==true){
+                <div class="bg-success p-3 text-center">
+                    <h4>Div-2</h4>
+                </div>
+            }@else {
+                <div class="bg-warning p-3 text-center">
+                    <h4>Div-2</h4>
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            @if(num1===num2){
+                <div class="bg-secondary p-3 text-center">
+                    <h4>Div-3</h4>
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            <div class="bg-danger p-3 text-center">
+                @if(selectedStatus==='INDIA'){
+                    <p>INDIA</p>
+                }
+                @else if (selectedStatus=='USA') {
+                    <p>USA</p>
+                }
+                @else if (selectedStatus=='RUSSIA') {
+                    <p>RUSSIA</p>
+                }
+                @else {
+                    <p>PLease select any country</p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3  text-center">
+            <button class="btn btn-danger mt-3 me-2" (click)="hideDiv1()" >Hide</button>
+            <button class="btn btn-primary mt-3 ms-2" (click)="showDiv1()" >show</button>
+        </div>
+        <div class="col-3 text-center">
+            <button class="btn btn-success mt-3 " (click)="toggleDiv2()">Toggle</button>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <div class="col-5 ms-2 mt-3">
+                    <input type="text" [(ngModel)]="num1" class="border border-primary" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Num-1">
+                </div>
+                <div class="col-5 mt-3">
+                    <input type="text" [(ngModel)]="num2" class="border border-primary" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Num-2">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row text-center">
+                <div class="col-5 ms-2 mt-3">
+                    <input type="checkbox" class="border border-primary" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="col-5 mt-3">
+                    <select [(ngModel)]="selectedStatus" class="form-select border border-primary"
+                        aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="INDIA">INDIA</option>
+                        <option value="USA">USA</option>
+                        <option value="RUSSIA">RUSSIA</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
