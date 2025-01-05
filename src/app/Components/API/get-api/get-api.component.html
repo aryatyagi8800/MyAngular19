@@ -1,0 +1,52 @@
+ <div class="mt-3 p-4 bg-success text-white rounded">
+        <h1>GET API</h1>
+        <h3></h3>
+    </div>
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-8">
+            <button class="btn btn-success" (click)="getData()">Get Data</button>
+            <div class="border mt-2 rounded-5">
+                <div class="text-white bg-secondary rounded p-2">Department List</div>
+                <div class="m-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sr No.</th>
+                                <th>Name</th>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>phone</th>
+                                <th>Website</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            @for (item of userLists; track $index) {
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.username}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.phone}}</td>
+                                <td>{{item.website}}</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 mt-2">
+            <button class="btn btn-success" (click)="getProducts()">Get Products</button>
+            <select class="form-select mt-1 mb-2">
+                <option value="products">Your products here....</option>
+                @for (item of productLists; track $index) {
+                    <option value="{{item.product_id}}">{{item.name}} -- Rs{{item.price}}</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>

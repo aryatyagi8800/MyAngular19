@@ -1,0 +1,87 @@
+<div class="mt-3 p-4 bg-success text-white rounded">
+    <h1>PUT API</h1>
+    <button class="btn btn-primary" (click)="getAllCars()">Get Cars</button>
+</div>
+<div class="container-fluid">
+<div class="row mt-2">
+    <div class="col-8">
+        <div class="border bg-body-secondary mt-2 rounded-5">
+            <div class="text-black fw-bold fs-4 bg-warning rounded p-2">Cars Lists</div>
+            <div class="m-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No.</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Reg No.</th>
+                            <th>Daily Rate</th>
+                            <th>Color</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of carLists; track $index) {
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.brand}}</td>
+                                <td>{{item.model}}</td>
+                                <td>{{item.regNo}}</td>
+                                <td>{{item.dailyRate}}</td>
+                                <td>{{item.color}}</td>
+                                <td><button class="btn btn-primary" (click)="onEdit(item)" >Edit</button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="border bg-body-secondary mt-2 rounded-5">
+            <div class="text-black fw-bold fs-4 bg-warning rounded p-2">Create New Car</div>
+            <div class="m-3">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="reg" class="form-label">Reg No.</label>
+                        <input type="text" [(ngModel)]="carObj.regNo" class="form-control" id="reg">
+                    </div>
+                    <div class="col-6">
+                        <label for="brand" class="form-label">Brand</label>
+                        <input type="text" [(ngModel)]="carObj.brand" class="form-control" id="brand">
+                    </div>
+                    <div class="col-6">
+                        <label for="model" class="form-label">Model</label>
+                        <input type="text" [(ngModel)]="carObj.model" class="form-control" id="model">
+                    </div>
+                    <div class="col-6">
+                        <label for="color" class="form-label">Color</label>
+                        <input type="text" [(ngModel)]="carObj.color" class="form-control" id="color">
+                    </div>
+                    <div class="col-6">
+                        <label for="year" class="form-label">Year</label>
+                        <input type="text" [(ngModel)]="carObj.year" class="form-control" id="year">
+                    </div>
+                    <div class="col-6">
+                        <label for="rate" class="form-label">Daily Rate</label>
+                        <input type="text" [(ngModel)]="carObj.dailyRate" class="form-control" id="rate">
+                    </div>
+                    <div class="col-6">
+                        <label for="url" class="form-label">Car Image URL</label>
+                        <input type="text" [(ngModel)]="carObj.carImage" class="form-control" id="url">
+                    </div>
+                    <div class="col-12 d-flex justify-content-center gap-2 mt-2">
+                        <button class="btn btn-danger" type="reset">Reset</button>
+                        @if (carObj.carId==0) {
+                            <button class="btn btn-success" (click)="onSaveCar()">Save</button>
+                        }
+                        @else {
+                            <button class="btn btn-warning" (click)="onUpdate()">Update</button> 
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
