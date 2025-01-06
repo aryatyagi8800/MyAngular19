@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ProgressBarComponent } from '../../../reusable/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-if-else',
-  imports: [FormsModule],
+  imports: [FormsModule,ProgressBarComponent],
   templateUrl: './if-else.component.html',
   styleUrl: './if-else.component.css'
 })

@@ -1,3 +1,14 @@
+<div class="row">
+    <div class="col-6">
+        <app-progress-bar [progressValue]="80" ></app-progress-bar>
+    </div>
+    <div class="col-6">
+        <app-tabs [tabList]="customerTabs" (onTabClicked)="onTabChange($event)"></app-tabs>
+    </div>
+    <div class="col-6">
+        <h2>Current tab is :{{currTab}}</h2>
+    </div>
+</div>
 <div class="mt-3 p-4 bg-secondary text-white rounded">
     <h1>Control Flow</h1>
     <p><span>&#64;</span>for</p>

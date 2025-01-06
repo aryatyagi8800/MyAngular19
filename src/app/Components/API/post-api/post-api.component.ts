@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Car } from '../../../model/class/car';
+import { IcarList } from '../../../model/interface/icar-list';
 
 @Component({
   selector: 'app-post-api',
@@ -10,17 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class PostApiComponent {
   http=inject(HttpClient);
-  carLists:any[]=[];
-  carObj:any={
-      "carId": 0,
-      "brand": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "dailyRate": "",
-      "carImage": "",
-      "regNo": ""
-  }
+  carLists:IcarList[]=[];
+  carObj:Car=new Car();
   constructor(){
     this.getAllCars();
   }
@@ -33,7 +26,8 @@ export class PostApiComponent {
   onSaveCar(){
     this.http.post("https://freeapi.miniprojectideas.com/api/CarRentalApp/CreateNewCar",this.carObj).subscribe((res:any)=>{
       if(res.result){
-        alert("Car created successfully!")
+        alert("Car created successfully!");
+        this.carObj=new Car();
       }
       else{
         alert(res.message);

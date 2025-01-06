@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-get-api',
@@ -7,12 +7,16 @@ import { Component, inject } from '@angular/core';
   templateUrl: './get-api.component.html',
   styleUrl: './get-api.component.css'
 })
-export class GetApiComponent {
+export class GetApiComponent implements OnInit {
   http=inject(HttpClient);
   constructor(){}
 
   userLists:any[]=[];
   productLists:any[]=[];
+
+  ngOnInit(): void {
+      this.getData();
+  }
 
   getData(){
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result:any)=>{

@@ -1,0 +1,78 @@
+<div class="mt-3 p-4 bg-secondary text-white rounded">
+    <h1>Pipe in Angular</h1>
+    <p>Default pipe & Custom pipe</p>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <p>Original value - {{firstName}}
+                <br>
+                pipe value - {{firstName | uppercase}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - {{firstName}}
+                <br>
+                pipe value - {{firstName | lowercase}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - {{firstName}}
+                <br>
+                pipe value - {{firstName | titlecase}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - 
+                <br>
+                pipe value - 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <p>Original value - {{currentDate}}
+                <br>
+                pipe value - {{currentDate | date}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - {{currentDate | date:'dd-MM-yyyy'}}
+                <br>
+                pipe value - {{currentDate | date:'dd-MM-yy'}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - {{currentDate | date:'dd-MMM-yyyy'}}
+                <br>
+                pipe value - {{currentDate | date:'dd/MMM/yyyy'}}
+            </p>
+        </div>
+        <div class="col-3">
+            <p>Original value - 
+                <br>
+                pipe value - 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <p>Original value - {{student}}
+                <br>
+                pipe value - {{student | json}}
+            </p>
+        </div>
+        <div class="col-5">
+            <p>Original value - {{currentTime}}
+                <br>
+                pipe value - {{currentTime | async |date:'hh:mm:ss'}}
+            </p>
+        </div>
+        <div class="col-5">
+            <p>Original value - {{student.state}}
+                <br>
+                pipe value - {{student.state| na}}
+            </p>
+        </div>
+    </div>
+</div>

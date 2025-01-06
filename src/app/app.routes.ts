@@ -14,6 +14,8 @@ import { PutApiComponent } from './Components/API/put-api/put-api.component';
 import { DeleteApiComponent } from './Components/API/delete-api/delete-api.component';
 import { ResourceApiComponent } from './Components/resource-api/resource-api.component';
 import { CrudApiServiceComponent } from './Components/crud-api-service/crud-api-service.component';
+import { LifeCycleEventsComponent } from './Components/life-cycle-events/life-cycle-events.component';
+import { PipesComponent } from './Components/pipes/pipes.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/data-binding', pathMatch: 'full' },
@@ -76,5 +78,13 @@ export const routes: Routes = [
   {
     path: 'crud-api-service',
     component:CrudApiServiceComponent,
+  },
+  {
+    path: 'lifeCycle-events',
+    component:LifeCycleEventsComponent,
+  },
+  {
+    path: 'pipes',
+    component:PipesComponent,
   },
 ];
