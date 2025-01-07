@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-2 fw-bold" routerLink="data-binding">An<span class="text-danger">g</span>ular</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="data-binding" >Data Binding</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="structural-directive">Structural-directive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="attribute-directive">attribute-directive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="if-else">if-elseif-else</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="for-switch">for-switch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="signal">signal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="linked-signal">linked-signal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="template-form">Template</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="reactive-form">Reactive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="get-api">GET</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="post-api">POST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="put-api">PUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="delete-api">DELETE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="resource-api">Resource-API</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="crud-api-service">Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="lifeCycle-events">LifeCycle-Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="pipes">PIPES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="view-child">View-Child</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ng-container">Ng-container</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ng-template">Ng-template</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <!-- <span class="me-2">{{loggedUserData?.emailId}}</span> -->
+            <button class="btn btn-outline-success" type="button" (click)="logOff()">Log Off</button>
+          </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

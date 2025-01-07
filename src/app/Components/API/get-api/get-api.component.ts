@@ -16,6 +16,7 @@ export class GetApiComponent implements OnInit {
 
   ngOnInit(): void {
       this.getData();
+      this.getAllusers();
   }
 
   getData(){
@@ -26,6 +27,11 @@ export class GetApiComponent implements OnInit {
   getProducts(){
     this.http.get("https://fake-store-api.mock.beeceptor.com/api/products").subscribe((result:any)=>{
       this.productLists=result;
+    })
+  }
+  getAllusers(){
+    this.http.get("https://projectapi.gerasim.in/api/UserApp/GetAllUsers").subscribe((res:any)=>{
+
     })
   }
 

@@ -16,9 +16,29 @@ import { ResourceApiComponent } from './Components/resource-api/resource-api.com
 import { CrudApiServiceComponent } from './Components/crud-api-service/crud-api-service.component';
 import { LifeCycleEventsComponent } from './Components/life-cycle-events/life-cycle-events.component';
 import { PipesComponent } from './Components/pipes/pipes.component';
+import { LoginComponent } from './Components/login/login.component';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { authGuard } from './guard/auth.guard';
+import { ViewChildComponent } from './Components/view-child/view-child.component';
+import { NgContainerComponent } from './Components/ng-container/ng-container.component';
+import { NgTemplateComponent } from './Components/ng-template/ng-template.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/data-binding', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    canActivate:[authGuard],
+    children:[
+        
   {
     path: 'data-binding',
     component: DataBindingComponent,
@@ -41,50 +61,64 @@ export const routes: Routes = [
   },
   {
     path: 'signal',
-    component:SignalComponent,
+    component: SignalComponent,
   },
   {
     path: 'linked-signal',
-    component:LinkedSignalComponent,
+    component: LinkedSignalComponent,
   },
   {
     path: 'template-form',
-    component:TemplateFormValiadationComponent,
+    component: TemplateFormValiadationComponent,
   },
   {
     path: 'reactive-form',
-    component:ReactiveFormValiadationComponent,
+    component: ReactiveFormValiadationComponent,
   },
   {
     path: 'get-api',
-    component:GetApiComponent,
+    component: GetApiComponent,
   },
   {
     path: 'post-api',
-    component:PostApiComponent,
+    component: PostApiComponent,
   },
   {
     path: 'put-api',
-    component:PutApiComponent,
+    component: PutApiComponent,
   },
   {
     path: 'delete-api',
-    component:DeleteApiComponent,
+    component: DeleteApiComponent,
   },
   {
     path: 'resource-api',
-    component:ResourceApiComponent,
+    component: ResourceApiComponent,
   },
   {
     path: 'crud-api-service',
-    component:CrudApiServiceComponent,
+    component: CrudApiServiceComponent,
   },
   {
     path: 'lifeCycle-events',
-    component:LifeCycleEventsComponent,
+    component: LifeCycleEventsComponent,
   },
   {
     path: 'pipes',
-    component:PipesComponent,
+    component: PipesComponent,
+  },
+  {
+    path: 'view-child',
+    component: ViewChildComponent,
+  },
+  {
+    path: 'ng-container',
+    component: NgContainerComponent,
+  },
+  {
+    path: 'ng-template',
+    component: NgTemplateComponent,
+  },
+    ]
   },
 ];
